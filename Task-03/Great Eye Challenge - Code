@@ -1,0 +1,205 @@
+#include <string.h>
+#include <stdio.h>
+#include <vector>
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+int readNumber()
+{
+  int x;    
+  string z;
+  getline(cin, z);
+  stringstream temp(z);
+  temp >> x;                         // Get user input from the keyboard
+  return x;
+}  
+
+int main () 
+{
+    int t;
+    t=readNumber();
+    int sum[t];
+    int flag[t];
+    
+    if(t>20)
+    {
+    cout<<"t has to be less than 20";
+    }
+    
+   
+    
+    else
+    {
+        
+       
+        for(int j=0;j<t;j++)
+        {
+            
+            sum[j]=0;               
+            flag[j]=0;                 //initialising all elements of sum and flag to 0
+            
+        }
+        for(int i=0;i<t;i++)
+        {
+            
+            int k;
+            k=readNumber();
+            string sentence;
+            getline(cin, sentence);
+            
+            if((k>300)||(k<1))
+            {
+                
+                flag[i]=-4;
+                continue;
+                
+            }
+            
+            vector<string> words;
+            char space[2] = " ";
+            char *token;
+
+            char *str=new char[sentence.size()+1];
+            str[sentence.size()]=0;
+            memcpy(str,sentence.c_str(),sentence.size());
+
+
+
+            token = strtok(str, space);
+
+            while( token != NULL )
+            {
+            
+                words.push_back(token);
+                token = strtok(NULL, space);
+            
+            }
+            
+            int number_of_words=words.size();
+            
+             for(int m=0;m<number_of_words;m++)
+              {
+                            
+                if(words[m].size()>20)
+                          {
+                                
+                                flag[i]=-3;         //if word size > 20
+                                break;
+                                
+                          }
+                                
+                            
+              } 
+            
+            for(int j=0;j<number_of_words;j++)
+                        {
+                string word=words[j];
+                int wordlength=word.length();
+                for(int n=0;n<wordlength;n++)
+                {
+                            char ch=words[j][n];
+                           
+                            if(((ch>96)&&(ch<123))||((ch>64)&&(ch<91))||(ch==32))
+                            {
+                                
+                                continue;            
+                            
+                            }
+                            
+                            else
+                            {
+                                flag[i]=-1;           //if user inputs special character
+                                break;
+                            }
+            
+                }
+            }
+                
+            if(flag[i]==-1)
+            {
+                
+                continue;           //skip iteration bcz of wrong input
+                
+            }
+            
+            if(number_of_words>200)
+            {
+                
+               flag[i]=-2;                          //if number of words > 200
+                
+            }
+            
+           
+            else
+                {
+                    
+                    if(k>(number_of_words-1))
+                    {
+
+                        sum[i]=-1;                  //sjbdhcjvjdchbbsjdhcjsdhcjshdcc
+
+                    }
+                   
+                    else
+                    {
+                    
+                        int word_number=words[k].size();
+                        
+                        
+                        
+                        for(int j=0;j<word_number;j++)
+                        {
+                            char ch=words[k][j];
+                            sum[i]=sum[i]+ch;
+                            
+                        }
+                   
+                    }
+                
+                }
+        
+        }
+        
+        for(int i=0;i<t;i++)
+        {
+            if(flag[i]==-1)
+            {
+                
+                cout<<"Only upper case and lower case letters allowed"<<endl;
+                
+            }
+            
+            else if(flag[i]==-2)
+            {
+                
+                cout<<"Number of words cannot be greater than 200"<<endl;
+                
+            }
+            
+            else if(flag[i]==-3)
+            {
+                
+                cout<<"Length of any word cannot exceed 20"<<endl;
+                
+            }
+            
+             else if(flag[i]==-4)
+            {
+                
+                cout<<"k can only be between 1 and 300"<<endl;
+                
+            }
+            
+            else
+            {
+            
+                cout<<sum[i]<<endl;
+            
+            }
+        }
+        
+    }
+   
+   return(0);
+}
