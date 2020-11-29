@@ -1,0 +1,43 @@
+int const motor = 4;
+int const trig = 9;
+int const echo = 6;
+
+void setup()
+{
+
+  pinMode(motor, OUTPUT);
+	pinMode(trig, OUTPUT); 
+	pinMode(echo, INPUT);
+
+}
+
+
+void loop()
+{
+  int time, distance;
+	
+  digitalWrite(trig, HIGH);
+	
+  delay(1);
+	
+  digitalWrite(trig, LOW);
+	
+  time = pulseIn(echo, HIGH);
+	
+  distance = (time/2) / 29.1;
+	
+  if (distance <= 100) 
+    {
+		
+    digitalWrite(motor, LOW);
+	
+    }
+    
+  else 
+    {
+		
+      digitalWrite(motor, HIGH);
+	
+    }
+
+}
