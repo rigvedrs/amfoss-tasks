@@ -1,3 +1,0 @@
-https://api.github.com/users/amfoss/repos – for fetching the amfoss repositories and their names (amfoss can be replaced with the name of the required account)
-
-$ perceval github category repository amfoss <repository name>
