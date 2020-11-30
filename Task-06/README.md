@@ -1,1 +1,1 @@
-
+I  tried installing golang on ubuntu , windows terminal as well as on visual studio code. But I was having some or the other error in each of them while trying to install go-reddit. I tried a lot of other things as well, like changing go environment , installing the language elsewhere,  create workspaces in different places, and a lot more, but the errors persisted. Since I used up a lot of time in this task , I just shifted to another one after this.
