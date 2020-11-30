@@ -10,4 +10,6 @@ I would love sharing my knowledge,helping the club grow, making students more aw
 
 ## Do you have any feedback for the selection process?
 The selection process was really great. The learning that I received from this process was really commendable! Few things that could have been different was providing some step by step help for figuring out some tasks that involve learning some large programming language, like the flutter app task, It would have been nice to know where to begin with and how to use certain widgets/ containers. Since,there wasn't enough time to learn the program from scratch, the basics of that language had many empty voids because I had to find out only that part which was required. But placing them and understanding their working became a bit confusing.
-The CS50 link was of the 2017 session, it would have been nice if it would have been of some recent session like 2019.
+The CS50 link was of the 2017 session, it would have been nice if it would have been of some recent session like 2019. 
+
+And I must mention this point , the group trainers and the senior members of the club have been really helpful and kind in the entire process! :)
